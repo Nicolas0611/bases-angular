@@ -15,5 +15,11 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "search.exclude": {
     "**/node_modules": false
+  },
+  "angular-schematics.schematicsDefaultOptions": {
+    "angular-*": {
+      "externalTemplate": true,
+      "skipStyle": true
+    }
   }
 }
