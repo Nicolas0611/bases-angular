@@ -1,4 +1,5 @@
 <ul>
+  <h4>{{ listName() }}</h4>
   @for (character of characters(); track character.id; let idx = $index) {
     @if (character.power >= 8000) {
       <li>

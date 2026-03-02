@@ -1,18 +1,8 @@
-<h1>Dragon Ball</h1>
+<h1>Dragon Ball Super</h1>
 
 <section>
   <div class="row">
-    <div class="col-12 col-sm-6">
-      <h3>Agregar</h3>
-
-      <input type="text" class="form-control" placeholder="Nombre" #nameInput />
-      <input type="number" class="form-control" placeholder="Poder" #powerInput />
-
-      <button class="btn btn-primary">Agregar</button>
-    </div>
-
-    <div class="row">
-      <dragonball-character-list [characters]="characters()" />
-    </div>
+    <dragonball-character-add (newCharacter)="addCharacter($event)" />
+    <dragonball-character-list [characters]="characters()" listName="Listado de personajes super" />
   </div>
 </section>
