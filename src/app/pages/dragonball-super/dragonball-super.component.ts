@@ -1,6 +1,7 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { CharacterList } from '../../components/dragonball/character-list/character-list';
 import { CharacterAdd } from '../../components/dragonball/character-add/character-add';
+import { DragonballService } from '../../services/dragonball.service';
 
 interface Character {
   id: number;
@@ -13,15 +14,5 @@ interface Character {
   imports: [CharacterList, CharacterAdd],
 })
 export class DragonballSuperComponent {
-  characters = signal<Character[]>([
-    {
-      id: 1,
-      name: 'Goku',
-      power: 10000,
-    },
-  ]);
-
-  addCharacter(newCharacter: Character) {
-    this.characters.update((current) => [...current, newCharacter]);
-  }
+  dragonballService = inject(DragonballService);
 }
